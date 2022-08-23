@@ -61,11 +61,15 @@ table {
     top: 0;
     height: 60px;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     padding: 0px 10px;
     background: white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.big {
+    font-size: 20px
 }
 .book {
     display: grid;
