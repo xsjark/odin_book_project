@@ -31,6 +31,12 @@ const deleteById = (id) => {
   renderBooks(myLibrary);
 };
 
+const toggleRead = (id) => {
+  myLibrary[id-1].read = !myLibrary[id-1].read;
+  container.innerHTML = '';
+  renderBooks(myLibrary);
+}
+
 const container = document.querySelector("#container");
 
 const renderBooks = (array) => {
@@ -43,7 +49,10 @@ const renderBooks = (array) => {
       <div>${element.author || "unknown"}</div>
       <div>${element.pages || "unknown"}</div>
       <div>${element.read}</div>
-      <div><button type="button" onClick="deleteById(${element.id})">Delete</button</div>
+      <div>
+        <button type="button" onClick="deleteById(${element.id})">Delete</button>
+        <button type="button" onClick="toggleRead(${element.id})">Read</button>
+      </div>
     `; 
     container.appendChild(book);
     console.log("render")

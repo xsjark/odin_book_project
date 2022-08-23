@@ -76,11 +76,18 @@ table {
     grid-template-columns: repeat(5, 1fr) 100px;
     padding: 0px 10px;
 }
-.book > div {
+.action-container {
+    display: flex;
+}
+.book > div:not(:last-child) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
+}
+.book > div:last-child {
+    display: flex;
+    align-items: center;
 }
 #list-header {
     display: grid;
