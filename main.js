@@ -18,7 +18,7 @@ const addBookToLibrary = () => {
     name: document.getElementById('name').value,
     author: document.getElementById('author').value,
     pages: document.getElementById('pages').value,
-    read: document.getElementById('read').value,
+    read: document.getElementById('read').checked,
   });
   container.innerHTML = ''
   renderBooks(myLibrary);
@@ -38,11 +38,11 @@ const renderBooks = (array) => {
     let book = document.createElement("div");
     book.classList.add("book");
     book.innerHTML = `
-      <p>${element.id}</p>
-      <p>${element.name}</p>
-      <p>${element.author}</p>
-      <p>${element.pages}</p>
-      <p>${element.read == "on" ? "no" : "yes"}</p>
+      <div>${element.id}</div>
+      <div>${element.name}</div>
+      <div>${element.author || "unknown"}</div>
+      <div>${element.pages || "unknown"}</div>
+      <div>${element.read}</div>
       <div><button type="button" onClick="deleteById(${element.id})">Delete</button</div>
     `; 
     container.appendChild(book);

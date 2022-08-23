@@ -55,28 +55,39 @@ table {
 }
 
 .header {
-    position: sticky; top: 0;
-    height: 50px;
+    position: sticky; 
+    top: 0;
+    height: 60px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     padding: 0px 10px;
     background: white;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 .book {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 100px;
     padding: 0px 10px;
-    
+}
+.book > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
 }
 #list-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 100px;
+    grid-template-rows: 50px;
     padding: 0px 10px;
-    height: 50px
+    border-bottom: 1px solid #d2d2d2;
+}
+#list-header > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
 }
 .book:not(:last-child) {
     border-bottom: 0.5px solid #d2d2d2;
