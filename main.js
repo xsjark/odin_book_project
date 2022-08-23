@@ -22,7 +22,6 @@ const addBookToLibrary = () => {
   });
   container.innerHTML = ''
   renderBooks(myLibrary);
-  console.log(JSON.stringify(myLibrary))
 }
 
 const deleteById = (id) => {
@@ -55,7 +54,6 @@ const renderBooks = (array) => {
       </div>
     `; 
     container.appendChild(book);
-    console.log("render")
   });
 };
 
